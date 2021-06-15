@@ -93,7 +93,6 @@ echo "========"
 echo "travis_fold:start:BUILD"
 docker build --build-arg GEOIP_ACCOUNT_ID=${GEOIP_ACCOUNT_ID} --build-arg GEOIP_LICENSE_KEY=${GEOIP_LICENSE_KEY} -t ${TAG} .
 echo "travis_fold:end:BUILD"
-echo "test string"
 
 echo "Running mocking-server..."
 docker build -t mockserver:latest ${WORKDIR} -f docker-config/Dockerfile.mockserver

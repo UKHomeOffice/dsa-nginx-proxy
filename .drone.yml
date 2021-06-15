@@ -25,7 +25,6 @@ steps:
     event:
     - pull_request
     - push
-    - tag
 
 - name: push_image_to_quay
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
@@ -43,8 +42,7 @@ steps:
     branch:
     - master
     event:
-    - push
-    - pull_request
+    - tag
 
 services:
 - name: docker

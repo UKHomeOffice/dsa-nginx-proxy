@@ -17,7 +17,6 @@ EOL
 
 SRC="${1}"
 DEST="${2}"
-VERSION="${3}"
 
 check_arg() {
     if [ -z "${1}" ]; then
@@ -30,9 +29,7 @@ check_arg() {
 
 check_arg "${SRC}" "SRC"
 check_arg "${DEST}" "DEST"
-check_arg "${VERSION}" "VERSION"
 
-PATCH="${VERSION}"
 MINOR=`echo ${PATCH} | awk -F '.' '{print $1"."$2}'`
 MAJOR=`echo ${MINOR} | awk -F '.' '{print $1}'`
 

@@ -38,7 +38,7 @@ steps:
     DOCKER_QUAY_PASSWORD:
       from_secret: docker_quay_password
     DOCKER_REPO: quay.io
-    DOCKER_USERNAME: ukhomeofficedigital+dsa_shared_services
+    DOCKER_USERNAME: ukhomeofficedigital+dsa_shared_service
   when:
     event:
     - push

@@ -38,6 +38,9 @@ ADD ./refresh_geoip.sh /
 RUN yum remove -y kernel-headers && \
     yum clean all
 
+RUN yum update -y && \
+    yum clean all
+
 RUN useradd -u 1000 nginx && \
     install -o nginx -g nginx -d \
       /usr/local/openresty/naxsi/locations \

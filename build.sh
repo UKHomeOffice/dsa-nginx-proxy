@@ -35,6 +35,8 @@ yum -y install \
     unzip \
     wget
 
+yum update -y
+
 mkdir -p openresty luarocks naxsi nginx-statsd geoip geoipupdate ngx_http_geoip2_module
 
 # Prepare

@@ -50,6 +50,17 @@ services:
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
 
 ---
+kind: pipeline
+name: cron
+type: kubernetes
+
+platform:
+  os: linux
+  arch: amd64
+
+workspace:
+  path: /workdir
+
 steps:
 - name: build_and_test_image
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind

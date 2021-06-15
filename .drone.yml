@@ -40,10 +40,11 @@ steps:
     DOCKER_REPO: quay.io
     DOCKER_USERNAME: ukhomeofficedigital+dsa_shared_service
   when:
-    event:
-    - push
     branch:
     - master
+    event:
+    - push
+    - pull_request
 
 services:
 - name: docker

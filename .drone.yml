@@ -16,6 +16,7 @@ steps:
   - apk add curl bash wget tar
   - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
   - ./ci-build.sh
+  - docker build -t quay.io/ukhomeofficedigital/dsa-nginx-proxy:$${DRONE_COMMIT_SHA} . --no-cache
   environment:
     GEOIP_ACCOUNT_ID:
       from_secret: geoip_account_id
@@ -71,6 +72,7 @@ steps:
   - apk add curl bash wget tar
   - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
   - ./ci-build.sh
+
   environment:
     GEOIP_ACCOUNT_ID:
       from_secret: geoip_account_id

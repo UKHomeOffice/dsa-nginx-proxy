@@ -37,6 +37,7 @@ tag_n_push() {
     FULL_NAME="${DEST}:${1}"
     echo -n "Publishing '${SRC}' as '${FULL_NAME}'..."
     docker tag "${SRC}" "${FULL_NAME}"
+    docker tag "${SRC}":"${DEST}"
     docker push "${FULL_NAME}"
     echo " done."
 }

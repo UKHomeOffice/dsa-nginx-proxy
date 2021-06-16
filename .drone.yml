@@ -43,7 +43,6 @@ steps:
     - master
     event:
     - push
-    - pull_request
 
 services:
 - name: docker
@@ -68,6 +67,7 @@ steps:
   - apk add curl bash wget tar
   - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
   - ./ci-build.sh
+
   environment:
     GEOIP_ACCOUNT_ID:
       from_secret: geoip_account_id

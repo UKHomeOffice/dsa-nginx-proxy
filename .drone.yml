@@ -43,7 +43,6 @@ steps:
     - master
     event:
     - push
-    - pull_request
 
 services:
 - name: docker
